@@ -1,0 +1,30 @@
+<div class="category-report-content glass-card">
+  <div class="chart-section">
+    <h3>Spending by Category</h3>
+    <div class="chart-container">
+      <canvas baseChart [data]="chartData" [options]="chartOptions" [type]="'pie'">
+      </canvas>
+    </div>
+  </div>
+
+  <div class="breakdown-section">
+    <h3>Category Breakdown</h3>
+    <div class="category-breakdown-list">
+      <div *ngFor="let cat of sortedCategoryData; let i = index" class="breakdown-item">
+        <div class="item-left">
+          <div class="color-dot" [style.backgroundColor]="colors[i % colors.length]"></div>
+          <div>
+            <p class="category-name">{{ cat.key }}</p>
+            <p class="subtext">{{ countTransactions(cat.key) }} transactions</p>
+          </div>
+        </div>
+        <div class="item-right">
+          <p class="amount">${{ cat.value | number:'1.0-0' }}</p>
+          <p class="subtext percentage">
+            {{ (cat.value / totalExpenses * 100) | number:'1.1-1' }}% of total
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

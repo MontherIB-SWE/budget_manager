@@ -1,0 +1,265 @@
+.reports-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 115px; 
+}
+
+.glass-card {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.226);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #ffffff;
+}
+
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+h2 {
+  text-align: left;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem; 
+  font-weight: 600;
+  text-align: center;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0.25rem 0 0 0;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 8px; 
+  color: #ffffff;
+  padding-left: 9px;
+  display: block; 
+}
+
+.export-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.export-buttons button {
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.btn-pdf {
+  background-color: rgba(37, 99, 235, 0.3); 
+  border-color: rgba(37, 99, 235, 0.4);
+}
+.btn-pdf:hover {
+  background-color: rgba(37, 99, 235, 0.5);
+  border-color: rgba(37, 99, 235, 0.6);
+}
+
+.btn-csv {
+  background-color: rgba(22, 163, 74, 0.3); 
+  border-color: rgba(22, 163, 74, 0.4);
+}
+.btn-csv:hover {
+  background-color: rgba(22, 163, 74, 0.5);
+  border-color: rgba(22, 163, 74, 0.6);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  color: #ffffff;
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px; 
+  font-size: 1rem;
+  transition: border 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+select:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+select option {
+  background: #2d3748;
+  color: #ffffff;
+}
+
+.period-text {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  min-height: 48px; 
+  display: flex;
+  align-items: center;
+}
+
+.summary-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.summary-card {
+  padding: 1.5rem; 
+  text-align: center;
+}
+
+.summary-card .label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.5rem 0;
+}
+
+.summary-card .value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.monthly-report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+}
+
+.chart-container {
+  height: 400px;
+  position: relative;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+}
+
+.report-table th,
+.report-table td {
+  padding: 1rem; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  text-align: left;
+  vertical-align: middle;
+}
+
+.report-table th {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.report-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.type-badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.type-income {
+  background-color: rgba(46, 249, 120, 0.15); 
+  color: #2ef978;
+}
+
+.type-expense {
+  background-color: rgba(255, 37, 37, 0.15); 
+  color: #ff2525;
+}
+
+.text-green {
+  color: #2ef978;
+  font-weight: 600;
+}
+
+.text-red {
+  color: #ff2525;
+  font-weight: 600;
+}
+
+.no-transactions-message {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.value-green {
+  color: #2ef978;
+}
+
+.value-red {
+  color: #ff2525;
+}
+
+@media (min-width: 768px) {
+  .controls-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .summary-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}

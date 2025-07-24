@@ -1,0 +1,61 @@
+<ngx-spinner name="ai" [fullScreen]="true" [zIndex]="9999"></ngx-spinner>
+
+<div class="container-ai">
+  <div class="glass-card">
+    <h2>Get AI‑Powered Financial Suggestions</h2>
+  </div>
+
+  <div class="glass-card">
+    <textarea
+      [(ngModel)]="userPrompt"
+      placeholder="Type your custom question here, or use automatic suggestion."
+      rows="4"
+      class="form-control">
+    </textarea>
+
+    <div class="button-group">
+      <button (click)="getAutomaticSuggestion()" [disabled]="isLoading">
+        {{ isLoading && !isCustom ? 'Generating…' : 'Get Automatic Suggestion' }}
+      </button>
+
+      <button (click)="getCustomSuggestion()" [disabled]="isLoading || !userPrompt">
+        {{ isLoading && isCustom ? 'Generating…' : 'Send Custom Message' }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="spinner"></div>
+    <p class="loading-text">Thinking…</p>
+  </div>
+
+  <div *ngIf="error" class="alert">
+    {{ error }}
+  </div>
+
+  <div *ngIf="aiResponse" class="glass-card ai-response">
+    <h3>AI Assistant's Suggestion:</h3>
+    <pre>{{ aiResponse }}</pre>
+  </div>
+
+  <div *ngIf="pastSuggestions.length" class="glass-card ai-history">
+    <h3>Past AI Suggestions</h3>
+
+    <div *ngFor="let s of pastSuggestions; let i = index" class="history-item">
+      <div class="history-header">
+        <div class="history-date"><strong>Date:</strong> {{ s.dateGenerated }}</div>
+        <button (click)="toggleExpand(i)">{{ expandedIndex === i ? 'Hide' : 'Show' }}</button>
+      </div>
+
+      <pre
+        [ngStyle]="{
+          'max-height': expandedIndex === i ? 'none' : '80px',
+          'overflow'  : 'hidden'
+        }">
+        {{ s.response }}
+      </pre>
+
+      <div *ngIf="expandedIndex !== i" class="fade-out"></div>
+    </div>
+  </div>
+</div>

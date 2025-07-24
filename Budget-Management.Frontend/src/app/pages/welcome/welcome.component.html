@@ -1,0 +1,38 @@
+
+<div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<div class="video-overlay"></div>
+<div class="welcome-container">
+  <header class="page-header">
+    <h1 class="header-title">Budget Manager</h1>
+    <nav class="header-actions">
+      <button (click)="openLoginModal()" class="btn btn-primary">Sign In</button>
+      <button (click)="openRegisterModal()" class="btn btn-secondary">Register</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="welcome-heading">Take Control of Your Finances</h2>
+    <p class="welcome-subheading">
+      Smart tracking and AI-powered suggestions are just a click away.
+    </p>
+  </main>
+</div>
+
+<app-login
+  *ngIf="showLogin"
+  (closeModal)="closeModals()"
+  (goToRegister)="openRegisterModal()"
+  [isClosing]="isClosing"
+></app-login>
+
+<app-register
+  *ngIf="showRegister"
+  (closeModal)="closeModals()"
+  (goToLogin)="openLoginModal()"
+  [isClosing]="isClosing"
+></app-register>

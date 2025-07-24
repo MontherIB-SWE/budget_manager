@@ -1,0 +1,33 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-wrapper {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #080045 0%, #005c6a 50%, #0000ff 100%);
+  background-size: 200% 200%;
+  animation: bg-pan 30s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.bg-wrapper svg {
+  position: absolute;
+  top: 50%; left: 50%;
+  min-width: 150%; min-height: 150%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes bg-pan {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-wrapper path {
+  transform: translate(var(--tx, 0), var(--ty, 0));
+  transition: transform 3s ease-in-out;
+}

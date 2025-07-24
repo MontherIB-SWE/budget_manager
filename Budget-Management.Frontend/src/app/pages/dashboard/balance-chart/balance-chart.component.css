@@ -1,0 +1,19 @@
+.balance-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Title */
+.chart-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Chart area */
+.chart-area {
+  width: 100%;
+  min-height: 300px;
+}

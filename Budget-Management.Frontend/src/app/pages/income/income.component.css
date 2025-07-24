@@ -1,0 +1,126 @@
+.container-income {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 115px;
+}
+
+.glass-card {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.226);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.fieldset-legend {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.form-field label {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  color: #ffffff;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.submit-btn {
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #0000007b;
+}
+
+.submit-btn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.income-result {
+  margin-top: 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.226);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #ffffff;
+  text-align: center;
+}
+
+.income-result h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.income-result p {
+  font-size: 2rem;
+  color: #28a745;
+  font-weight: 700;
+  margin: 0;
+}

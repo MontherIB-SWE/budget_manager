@@ -1,0 +1,46 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(20, 20, 30, 0.2);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  z-index: 2;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: left;
+}
+
+header .hide-nav nav {
+  display: none;
+}
+
+header nav {
+  margin-top: 0;
+  padding: 0;
+  text-align: right;
+}
+
+header nav a {
+  margin-right: 1rem;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 20px;
+  padding: 8px 8px;
+}
+
+header nav a:hover {
+  background: white;
+  color: #2563eb;
+  border-radius: 20px;
+}

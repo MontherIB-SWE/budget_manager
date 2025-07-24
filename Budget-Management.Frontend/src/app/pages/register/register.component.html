@@ -1,0 +1,57 @@
+<div class="modal-backdrop" (click)="closeModal.emit()" [class.fade-out]="isClosing">
+  <div class="modal-container" (click)="$event.stopPropagation()" [class.fade-out]="isClosing">
+    <button class="modal-close-btn" (click)="closeModal.emit()" aria-label="Close">&times;</button>
+
+    <h3>Create Account</h3>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="register-name">Name</label>
+        <input id="register-name" type="text" formControlName="name" required>
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error-message">
+          <small *ngIf="registerForm.get('name')?.errors?.['required']">Name is required.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input id="register-email" type="email" formControlName="email" required>
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-message">
+          <small *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="registerForm.get('email')?.errors?.['email']">Please enter a valid email.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="register-password">Password</label>
+        <input id="register-password" type="password" formControlName="password" required>
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">
+          <small *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</small>
+          <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="register-confirm-password">Confirm Password</label>
+        <input id="register-confirm-password" type="password" formControlName="confirmPassword" required>
+        <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.hasError('passwordMismatch')" class="error-message">
+          <small>Passwords do not match.</small>
+        </div>
+      </div>
+      
+      <div *ngIf="errorMessage" class="error-message server-error">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="modal-submit-btn" [disabled]="isLoading">
+        <span *ngIf="!isLoading">Create Account</span>
+        <span *ngIf="isLoading" class="loading-spinner"></span>
+      </button>
+    </form>
+
+    <div class="modal-footer-text">
+      <span>Already have an account? </span>
+      <a (click)="switchToLogin()">Sign in here</a>
+    </div>
+  </div>
+</div>

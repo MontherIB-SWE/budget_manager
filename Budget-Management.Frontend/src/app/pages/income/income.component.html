@@ -1,0 +1,35 @@
+<div class="container-income">
+  <div class="glass-card">
+    <h2>Income Calculator</h2>
+  </div>
+
+  <form (ngSubmit)="calculateAverage()">
+    <div class="glass-card">
+      <div class="income-fieldset">
+        <legend class="fieldset-legend">Monthly Income (Last 5 Months)</legend>
+        <ng-container *ngFor="let label of monthLabels; let i = index; trackBy: trackByIndex">
+          <div class="form-field">
+            <label [for]="'salary' + i">{{ 'Income for ' + label + ':' }}</label>
+            <input
+              class="form-input"
+              type="number"
+              [id]="'salary' + i"
+              [name]="'salary' + i"
+              [(ngModel)]="salaries[i]"
+              placeholder="0.00"
+              min="0"
+              step="any"
+              required
+            />
+          </div>
+        </ng-container>
+      </div>
+      <button type="submit" class="submit-btn">Calculate Average</button>
+    </div>
+  </form>
+
+  <div class="income-result" *ngIf="averageIncome !== null">
+    <h3>Your Average Monthly Income Is:</h3>
+    <p>{{ averageIncome | currency:'USD':'symbol':'1.2-2' }}</p>
+  </div>
+</div>

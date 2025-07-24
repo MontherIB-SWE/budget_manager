@@ -1,0 +1,80 @@
+<div class="transactions-container">
+  <div class="glass-card">
+    <h2>Add Transaction</h2>
+  </div>
+
+  <div class="glass-card">
+    <form (ngSubmit)="addTransaction()" #transactionForm="ngForm">
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required [(ngModel)]="newTransaction.amount" name="amount" />
+      </div>
+
+      <div>
+        <label for="type">Type:</label>
+        <select id="type" required [(ngModel)]="newTransaction.type" name="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="category">Category:</label>
+        <div class="category-control">
+          <select id="category" required [(ngModel)]="newTransaction.categoryId" name="category">
+            <option [ngValue]="undefined" disabled>Select a category</option>
+            <option *ngFor="let cat of categories" [value]="cat.id">
+              {{ cat.name }}
+            </option>
+          </select>
+          <button type="button" class="add-btn" (click)="toggleAddCategory()">+</button>
+        </div>
+      </div>
+
+      <div *ngIf="showAddCategoryInput" class="add-category-input">
+        <label for="newCategoryName">New Category Name:</label>
+        <input type="text" id="newCategoryName" [(ngModel)]="newCategoryName" name="newCategoryName" required />
+        <button type="button" (click)="addNewCategory()" [disabled]="!newCategoryName">Save Category</button>
+        <button type="button" (click)="toggleAddCategory()">Cancel</button>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="newTransaction.description" name="description" />
+      </div>
+
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required [(ngModel)]="newTransaction.date" name="date" />
+      </div>
+
+      <button type="submit" [disabled]="!transactionForm.form.valid">Add Transaction</button>
+    </form>
+  </div>
+
+  <div style="margin-top: 1.5rem;"></div>
+
+  <div class="glass-card">
+    <div *ngIf="transactions.length > 0">
+      <h3>Your Transactions</h3>
+      <div class="transaction-list">
+        <ul>
+          <li *ngFor="let txn of transactions">
+            <div class="txn-details">
+              <span class="txn-amount" [ngStyle]="{ color: txn.type === 'income' ? 'green' : 'red' }">
+                {{ txn.amount | currency }}
+              </span>
+              <span class="txn-text" [title]="txn.description || 'No description'">
+                {{ getCategoryName(txn.categoryId) }} on {{ txn.date | date:'mediumDate' }}
+              </span>
+            </div>
+            <button class="delete-btn" (click)="deleteTransaction(txn.id)">🗑️</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngIf="transactions.length === 0">
+      <p>No transactions found.</p>
+    </div>
+  </div>
+</div>

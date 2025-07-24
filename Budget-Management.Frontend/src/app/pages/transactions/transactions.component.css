@@ -1,0 +1,251 @@
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  padding: 20px; 
+  box-sizing: border-box;
+      padding-top: 115px; 
+
+}
+
+.glass-card {
+  padding: 2rem; 
+  background: rgba(0, 0, 0, 0.226);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 2rem; 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  margin: 0; 
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 3px;
+  color: #ffffff;
+  padding-left: 9px; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+input,
+select {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: border 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+select option {
+    background: #2d3748;
+    color: #ffffff;
+}
+
+input:focus,
+select:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+button {
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+button:hover:not(:disabled) {
+  background-color: #0000007b;
+}
+
+button:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.delete-btn {
+  background-color: rgba(220, 53, 69, 0.3);
+  padding:none;
+  line-height: 0;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+.delete-btn:hover {
+    background-color: rgba(220, 53, 69, 0.5);
+}
+
+.transaction-list {
+  max-height: 280px;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  scrollbar-color: rgba(255,255,255,0.5) transparent;
+  scrollbar-width: thin;
+}
+.transaction-list::-webkit-scrollbar {
+  width: 8px;
+}
+.transaction-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.transaction-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.transactions-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transactions-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.transactions-container li:last-child {
+  border-bottom: none;
+}
+
+.txn-details {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  align-items: center;
+}
+
+.txn-amount {
+  min-width: 100px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.txn-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 1rem;
+  color: #e0e0e0;
+}
+.category-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.category-control select {
+  flex-grow: 1;
+  width: auto;
+  margin-top: 0;
+}
+
+.add-btn {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  font-size: 1.5rem; 
+  padding: 0.5rem 0.8rem; 
+  line-height: 1; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  height: 48px; 
+  min-width: 48px; 
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.add-btn:hover {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.add-category-input {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  border-radius: 1rem; 
+  margin-top: 1rem; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add-category-input label {
+  flex-basis: 100%;
+  margin-bottom: 0;
+  font-size: 0.9rem; 
+  color: #ccc;
+}
+
+.add-category-input input[type="text"] {
+  flex-grow: 1; 
+  margin-top: 0; 
+}
+
+.add-category-input button {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  margin-top: 0; 
+}
+
+.add-category-input button:first-of-type {
+  background-color: rgba(40, 167, 69, 0.3); 
+  border: 1px solid rgba(40, 167, 69, 0.4);
+}
+
+.add-category-input button:first-of-type:hover:enabled {
+  background-color: rgba(40, 167, 69, 0.5);
+}
+
+.add-category-input button:last-of-type {
+  background-color: rgba(220, 53, 69, 0.3);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+.add-category-input button:last-of-type:hover {
+  background-color: rgba(220, 53, 69, 0.5);
+}
