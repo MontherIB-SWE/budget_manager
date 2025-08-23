@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 /**
  * Service for managing transactions via HTTP API.
@@ -11,7 +12,7 @@ import { Observable, of } from 'rxjs';
 })
 export class TransactionService {
   /** Base endpoint for transaction-related API calls */
-  private apiUrl = 'http://localhost:3000/api/transactions';
+  private apiUrl = `${environment.apiUrl}/transactions`;
 
   /**
    * @param http - Angular's HttpClient for performing HTTP requests

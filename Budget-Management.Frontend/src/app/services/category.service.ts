@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Category } from '../core/models/category.model';
+import { environment } from '../../environments/environment';
 
 /**
  * Service for managing categories via HTTP API calls.
@@ -14,7 +15,7 @@ export class CategoryService {
   /**
    * Base URL for category-related API endpoints
    */
-  private apiUrl = 'http://localhost:3000/api/categories';
+  private apiUrl = `${environment.apiUrl}/categories`;
 
   /**
    * @param http - Angular HttpClient for making HTTP requests

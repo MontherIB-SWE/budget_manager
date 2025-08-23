@@ -16,7 +16,8 @@ sequelize.authenticate()
 
 // Configure CORS to allow requests from Angular frontend
 app.use(cors({
-  origin: 'http://localhost:4200',    // Allowed origin (Angular dev server)
+  origin: ['https://budget-management-front-baz50xopi-monthers-projects-1acb2942.vercel.app/',
+          'http://localhost:4200'],       // Allowed origin (Angular dev server)
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true                   // Allow cookies and auth headers
 }));

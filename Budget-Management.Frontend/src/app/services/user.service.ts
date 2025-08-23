@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-
-// Base URL for user-related API endpoints
-const USER_API_URL = 'http://localhost:3000/api/users';
+import { environment } from '../../environments/environment';
 
 /**
  * Service for managing user data such as fetching current user details
@@ -25,7 +23,7 @@ export class UserService {
    * @returns Observable emitting the server response
    */
   updateAverageIncome(userId: string, averageIncome: number): Observable<any> {
-    const url = `${USER_API_URL}/${userId}/income`;
+    const url = `${environment.apiUrl}/users/${userId}/income`;
     return this.http.put<any>(url, { averageIncome });
   }
 
@@ -41,7 +39,7 @@ export class UserService {
       return of(null);
     }
     // Fetch user details by ID
-    return this.http.get<any>(`${USER_API_URL}/${userId}`);
+    return this.http.get<any>(`${environment.apiUrl}/users/${userId}`);
   }
 
   /**
@@ -70,9 +68,9 @@ export class UserService {
     if (!userId) {
       return of(null);
     }
-    return this.http.get<any>(`${USER_API_URL}/${userId}`).pipe(
+    return this.http.get<any>(`${environment.apiUrl}/users/${userId}`).pipe(
       // Map the user object to its `name` or null if absent
-      switchMap(user => of(user?.name ?? null))
+      switchMap((user: any) => of(user?.name ?? null))
     );
   }
 }

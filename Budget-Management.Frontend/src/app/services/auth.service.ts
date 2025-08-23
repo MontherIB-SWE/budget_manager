@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-
-// Base URL for authentication-related API endpoints
-const AUTH_API_URL = 'http://localhost:3000/api/auth';
+import { environment } from '../../environments/environment';
 
 /**
  * Service responsible for user authentication flows (login and registration).
@@ -24,7 +22,7 @@ export class AuthService {
    * @returns Observable of the HTTP response
    */
   login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.post<any>(`${AUTH_API_URL}/login`, credentials).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/auth/login`, credentials).pipe(
       // Side effect: store user ID in localStorage on success
       tap(response => this.saveUserIdFromResponse(response))
     );
@@ -37,7 +35,7 @@ export class AuthService {
    * @returns Observable of the HTTP response
    */
   register(data: { name: string; email: string; password: string; phone?: string }): Observable<any> {
-    return this.http.post<any>(`${AUTH_API_URL}/register`, data).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/auth/register`, data).pipe(
       // Side effect: store user ID in localStorage on success
       tap(response => this.saveUserIdFromResponse(response))
     );

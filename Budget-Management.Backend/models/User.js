@@ -28,6 +28,7 @@ const User = sequelize.define('User', {
     allowNull: true,
   }
 }, {
+  tableName: 'users',
   hooks: {
     beforeCreate: async (user) => {
       if (user.password) {

@@ -1,12 +1,14 @@
-// Import Sequelize constructor from the sequelize package
 const { Sequelize } = require('sequelize');
+require('dotenv').config();
 
-// Create a new Sequelize instance, connecting to the 'budget' database
-// User: 'root', Password: '12345', Host: 'localhost', using MySQL dialect
-const sequelize = new Sequelize('budget', 'root', '12345', {
-  host: 'localhost',   // Database server hostname
-  dialect: 'mysql'     // Dialect indicates the type of database (MySQL)
+const sequelize = new Sequelize(process.env.DB_CONNECTION_STRING, {
+  dialect: 'postgres', // Use postgres
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // Required for Neon
+    }
+  }
 });
 
-// Export the configured Sequelize instance for use in other modules
 module.exports = sequelize;

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-// Base URL for AI suggestion API endpoints
-const AUTH_API_URL = 'http://localhost:3000/api/suggestions';
+import { environment } from '../../environments/environment';
 
 /**
  * Service responsible for communicating with the backend AI suggestions API.
@@ -16,7 +14,7 @@ export class AiService {
   /**
    * API URL used for all suggestion-related endpoints
    */
-  private apiUrl = `${AUTH_API_URL}`;
+  private apiUrl = `${environment.apiUrl}/suggestions`;
 
   /**
    * Inject HttpClient for making HTTP requests.
