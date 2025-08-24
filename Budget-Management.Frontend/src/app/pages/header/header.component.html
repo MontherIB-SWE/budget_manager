@@ -1,11 +1,12 @@
 <header>
   <h1>Budget Manager</h1>
-  <nav>
-    <a routerLink="/dashboard">🏠 Dashboard</a>
-    <a routerLink="/income">💰 Income</a>
-    <a routerLink="/transactions">📒 Transactions</a>
-    <a routerLink="/ai-suggestions">🤖 AI Suggestions</a>
-    <a routerLink="/reports">📊 Reports</a>
-    <a routerLink="/">🚪 Logout</a>
+  <button aria-label="Toggle navigation" (click)="toggleNav()" class="menu-btn">☰</button>
+  <nav [class.open]="showNav">
+    <a routerLink="/dashboard" (click)="toggleNav()">🏠 Dashboard</a>
+    <a routerLink="/income" (click)="toggleNav()">💰 Income</a>
+    <a routerLink="/transactions" (click)="toggleNav()">📒 Transactions</a>
+    <a routerLink="/ai-suggestions" (click)="toggleNav()">🤖 AI Suggestions</a>
+    <a routerLink="/reports" (click)="toggleNav()">📊 Reports</a>
+    <a routerLink="/" (click)="toggleNav()">🚪 Logout</a>
   </nav>
 </header>

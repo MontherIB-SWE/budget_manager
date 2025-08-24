@@ -82,3 +82,11 @@
     margin: 0 auto;
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
+
+@media (max-width: 767px) {
+  .page-header { padding: 1rem 1.25rem; }
+  .header-title { font-size: 1.25rem; }
+  .header-actions .btn { padding: 0.6rem 1rem; font-size: 0.9rem; }
+  .welcome-heading { font-size: 2rem; }
+  .welcome-subheading { font-size: 1rem; padding: 0 1rem; }
+}

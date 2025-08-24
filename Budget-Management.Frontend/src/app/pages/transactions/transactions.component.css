@@ -249,3 +249,23 @@ button:disabled {
 .add-category-input button:last-of-type:hover {
   background-color: rgba(220, 53, 69, 0.5);
 }
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .transactions-container {
+    padding: 12px;
+  }
+
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+
+  .glass-card { padding: 1.25rem; border-radius: 1.5rem; }
+
+  .txn-amount { min-width: 72px; font-size: 1rem; }
+  .txn-text { margin-left: 0.5rem; }
+
+  .category-control { flex-wrap: wrap; }
+  .category-control select { min-width: 160px; }
+
+  .add-category-input { padding: 1rem; }
+}

@@ -26,6 +26,40 @@ body::-webkit-scrollbar {
     border-radius: 10px;
 }
 
+/* Responsive design tokens */
+:root {
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --radius-lg: 16px;
+}
+
+/* Small screens: tighten paddings, improve legibility */
+@media (max-width: 767px) {
+  .container {
+    margin: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-container {
+    width: calc(100% - 2 * var(--spacing-sm));
+    max-width: 420px;
+    padding: var(--spacing-lg);
+  }
+
+  .modal-submit-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.25rem;
+  }
+
+  .video-background video {
+    object-position: center;
+  }
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;

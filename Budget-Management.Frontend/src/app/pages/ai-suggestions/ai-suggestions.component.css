@@ -176,3 +176,13 @@ button:disabled {
   margin-top: -24px;
   position: relative;
 }
+
+/* Mobile tweaks */
+@media (max-width: 767px) {
+  .container-ai { padding: 12px; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  .glass-card { padding: 1.25rem; border-radius: 1.5rem; }
+  .button-group { flex-direction: column; }
+  button { width: 100%; }
+}

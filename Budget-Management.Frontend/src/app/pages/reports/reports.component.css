@@ -175,4 +175,8 @@ select option {
   h2 {
     font-size: 2rem;
   }
+  .reports-container { padding: 12px; }
+  .glass-card { padding: 1.25rem; border-radius: 1.5rem; }
+  .export-buttons { width: 100%; justify-content: stretch; }
+  .export-buttons button { flex: 1; }
 }

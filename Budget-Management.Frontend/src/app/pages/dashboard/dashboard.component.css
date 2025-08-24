@@ -72,3 +72,31 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
+
+/* Mobile tweaks */
+@media (max-width: 767px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+
+  .glass-card {
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .header-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .summary-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

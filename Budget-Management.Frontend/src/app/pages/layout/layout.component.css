@@ -21,3 +21,10 @@
 .content > * + * {
   margin-top: 1.5rem;
 }
+
+@media (max-width: 767px) {
+  .content {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+}
