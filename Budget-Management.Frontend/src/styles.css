@@ -8,6 +8,9 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+.main {
+  margin-top: var(--header-height);
+}
 .video-overlay {
   position: fixed;
   top: 0;
@@ -34,6 +37,7 @@ body::-webkit-scrollbar {
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --radius-lg: 16px;
+  --header-height: 72px;
 }
 
 /* Small screens: tighten paddings, improve legibility */
@@ -58,6 +62,8 @@ body::-webkit-scrollbar {
   .video-background video {
     object-position: center;
   }
+
+  :root { --header-height: 64px; }
 }
 
 .modal-backdrop {

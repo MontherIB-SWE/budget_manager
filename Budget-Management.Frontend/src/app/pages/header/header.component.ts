@@ -18,7 +18,7 @@ export class HeaderComponent {
    * Controls whether the navigation menu is shown.
    * Can be toggled to collapse/expand the nav links.
    */
-  showNav = true;
+  showNav = false;
 
   /**
    * Toggles the visibility of the navigation menu.
@@ -26,5 +26,25 @@ export class HeaderComponent {
    */
   toggleNav(): void {
     this.showNav = !this.showNav;
+  }
+
+  /**
+   * Ensure correct state on viewport changes so menu behaves across resizes.
+   * - On desktop (>=768px) ensure menu is visible.
+   * - On mobile (<768px) keep it collapsed until toggled.
+   */
+  onResize(): void {
+    if (window.innerWidth >= 768) {
+      this.showNav = true;
+    } else {
+      this.showNav = false;
+    }
+  }
+
+  constructor() {
+    // Initialize based on current viewport
+    this.onResize();
+    // Listen to viewport resize
+    window.addEventListener('resize', () => this.onResize());
   }
 }

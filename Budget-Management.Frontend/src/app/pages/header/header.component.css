@@ -9,7 +9,9 @@ header {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
-  z-index: 2;
+  z-index: 100;
+  top: 0;
+  left: 0;
 }
 
 header h1 {
