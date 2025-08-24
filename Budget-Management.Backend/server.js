@@ -14,12 +14,14 @@ sequelize.authenticate()
   .then(() => console.log('MySQL Database connected...'))
   .catch(err => console.log('Error: ' + err));
 
-// Configure CORS to allow requests from Angular frontend
+// Configure CORS to allow requests from frontend domains (production + local dev)
 app.use(cors({
-  origin: ['budget-manager-murex.vercel.app',
-          'http://localhost:4200'],       // Allowed origin (Angular dev server)
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true                   // Allow cookies and auth headers
+  origin: [
+    'https://budget-manager-murex.vercel.app', // Vercel production domain (HTTPS)
+    'http://localhost:4200'                    // Angular dev server
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
 }));
 
 app.use(express.json()); // Parse incoming JSON payloads
