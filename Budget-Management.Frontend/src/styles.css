@@ -63,7 +63,7 @@ body::-webkit-scrollbar {
     object-position: center;
   }
 
-  :root { --header-height: 64px; }
+  :root { --header-height: 70px; }
 }
 
 .modal-backdrop {
