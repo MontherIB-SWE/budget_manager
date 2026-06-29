@@ -1,9 +1,4 @@
-<!--
-  Paste into budget_manager/README.md (Edit ✏️ on the repo → select-all → delete → paste).
-  TWO things to do after pasting:
-    1. Add a screenshot/GIF where marked (biggest single upgrade).
-    2. Confirm the live URL below is correct & public, or remove that line.
--->
+
 
 # 💰 AI Budget Manager
 
@@ -13,6 +8,7 @@ A full-stack personal-finance app for tracking income and spending, visualizing 
 
 <!-- 👇 Add a screenshot or GIF here — drag an image into the GitHub editor and paste the link.
 ![Dashboard](docs/screenshot.png) -->
+<img width="1920" height="1009" alt="budget_manager" src="https://github.com/user-attachments/assets/3ea66269-b50f-4d23-bd52-d642f04f79f4" />
 
 ## ✨ Features
 - 📊 **Dashboard** with income/expense tracking and category breakdowns
