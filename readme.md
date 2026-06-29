@@ -8,7 +8,9 @@ A full-stack personal-finance app for tracking income and spending, visualizing 
 
 <!-- 👇 Add a screenshot or GIF here — drag an image into the GitHub editor and paste the link.
 ![Dashboard](docs/screenshot.png) -->
-<img width="1920" height="1009" alt="budget_manager" src="https://github.com/user-attachments/assets/3ea66269-b50f-4d23-bd52-d642f04f79f4" />
+<img width="1920" height="1009" alt="budget_manager" src="https://github.com/user-attachments/assets/0ca26ad3-d9c5-4be7-a667-ed5a4f438474" />
+<img width="1920" height="1009" alt="budget_manager_dashboard" src="https://github.com/user-attachments/assets/1f7b2ca3-f4f2-4ccb-b52f-f1f6db92c1b7" />
+<img width="1920" height="1393" alt="budget_manager_reports" src="https://github.com/user-attachments/assets/ab7934ac-a254-482e-ae72-f89bd148e263" />
 
 ## ✨ Features
 - 📊 **Dashboard** with income/expense tracking and category breakdowns
